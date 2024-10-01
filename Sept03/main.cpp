@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 		cin  >> op;
 		switch (op) {
 			case 'a':
-				s = new Student;
+				s = new Student("");
 				cout << "Name: ";
 				cin >> s->name;
 				csit->addStudent(s);

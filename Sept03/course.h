@@ -9,7 +9,8 @@ class Course {
 		size = 0;
 		capacity = 10;
 		cout << "Allocating " << capacity * sizeof(Student) << " bytes" << endl;
-		students = (Student**) malloc(capacity * sizeof(Student*));
+		students = (Student**) calloc(capacity, sizeof(Student*));
+		cout << "Address of student: " << students << endl;
 	}
 	
 	void addStudent(Student* s) {
@@ -28,5 +29,13 @@ class Course {
 		for (int i = 0; i<size; i++) {
 			cout << i+1 << ". " << students[i]->name << endl;
 		}
+	}
+	
+	~Course() {
+		for (int i = 0; i < size; i++) {
+			delete students[i];
+		}
+		free(students);
+		cout << "Destroy course" << endl;
 	}
 };
