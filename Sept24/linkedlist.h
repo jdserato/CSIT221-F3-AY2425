@@ -1,6 +1,7 @@
 #include "list.h"
 #include "node.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class LinkedList : public List {
@@ -93,5 +94,23 @@ class LinkedList : public List {
 		}
 		remove_node(curr);
 		return pos;
+	}
+	
+	int removeAt(int pos) {
+		node* curr;
+		if (pos <= ceil(size / 2.0)) {
+			cout << "gikan sa head " << endl;
+			curr = head->next;
+			for (int i = 1; i < pos; i++) {
+				curr = curr->next;
+			}
+		} else {
+			cout << "gikan sa tail " << endl;
+			curr = tail->prev;
+			for (int i = size; i > pos; i--) {
+				curr = curr->prev;
+			}
+		}
+		return remove_node(curr);
 	}
 };

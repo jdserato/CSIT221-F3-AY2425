@@ -10,10 +10,11 @@ int main(int argc, char** argv) {
 	list->add(3);
 	list->addHead(5);
 	list->add(7);
+	list->add(9);
 	list->print();
 //	cout << "3rd elem: " << list->get(3) << endl;
 //	cout << "1st elem: " << list->get(1) << endl;
-	cout << "Remove Head at : " << list->removeHead() << endl;
+	cout << "Remove 4st : " << list->removeAt(4) << endl;
 //	list->print();
 //	cout << "Remove head : " << list->removeHead() << endl;
 //	cout << "Remove head : " << list->removeHead() << endl;
