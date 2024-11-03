@@ -9,7 +9,11 @@ class LinkedList : public List {
 	int size;
 	
 	public:
-	void add(int num) {
+	int getSize() {
+		return size;
+	}
+		
+	void add(int num) { //add Tail
 		if (!head) {
 			cout << "Adding head" << endl;
 			head = new node;

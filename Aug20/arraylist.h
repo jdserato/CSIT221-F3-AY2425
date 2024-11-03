@@ -13,9 +13,10 @@ class ArrayList : public List {
 		capacity= 5;
 		array = (int*) malloc( 5 * sizeof(int) );
 		size = 0;
-		for (int i = 0; i < 5; i++) {
-			cout << array[i] << " ";
-		}
+	}
+	
+	int removeLast() {
+		return array[--size];
 	}
 	
 	void add(int num) {
@@ -28,6 +29,10 @@ class ArrayList : public List {
 		}
 		cout << "Add " << num << endl;
 		array[size++] = num;
+	}
+	
+	int getSize() {
+		return size;
 	}
 	
 	int get(int pos) {
